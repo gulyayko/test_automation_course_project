@@ -11,7 +11,7 @@ def pytest_addoption(parser):
                      help="Choose browser: chrome or firefox")
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="session")
 def browser(request):
     language = request.config.getoption("language")
     browser_name = request.config.getoption("browser_name")
@@ -30,3 +30,4 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
+

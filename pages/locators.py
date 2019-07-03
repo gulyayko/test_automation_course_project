@@ -1,12 +1,19 @@
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
+    pass
+
 
 class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
     REGISTRATION_FORM = (By.ID, "register_form")
+
 
 class ProductPageLocators:
     ADD_TO_CART = (By.CSS_SELECTOR, ".btn-add-to-basket")

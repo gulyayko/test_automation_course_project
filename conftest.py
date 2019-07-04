@@ -6,7 +6,7 @@ from time import sleep
 
 
 def pytest_addoption(parser):
-    parser.addoption('--language', action='store', default='en', help="Choose language")
+    parser.addoption('--language', action='store', default='ru', help="Choose language")
     parser.addoption('--browser_name', action='store', default='chrome',
                      help="Choose browser: chrome or firefox")
 

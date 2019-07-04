@@ -25,6 +25,10 @@ class BasePage(object):
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
+
     def go_to_cart_page(self):
         button = self.browser.find_element(*BasePageLocators.CART_BUTTON)
         button.click()
@@ -65,4 +69,5 @@ class BasePage(object):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
 

@@ -1,19 +1,19 @@
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from .locators import BasePageLocators
-
 import math
 
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from pages.locators import BasePageLocators
 
 
 class BasePage(object):
     def __init__(self, browser, url):
         self.browser = browser
         self.url = url
-        # self.browser.implicitly_wait(timeout)
+        self.browser.implicitly_wait(10)
 
     def open(self):
         self.browser.get(self.url)
@@ -50,7 +50,7 @@ class BasePage(object):
 
     def is_disappeared(self, how, what, timeout=4):
         try:
-            WebDriverWait(self.browser, timeout, 1, TimeoutException).\
+            WebDriverWait(self.browser, timeout, 1, TimeoutException). \
                 until_not(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return False
@@ -69,5 +69,3 @@ class BasePage(object):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
-
-

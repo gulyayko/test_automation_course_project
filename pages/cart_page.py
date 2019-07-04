@@ -7,8 +7,5 @@ class CartPage(BasePage):
         assert self.is_not_element_present(*CartPageLocators.PRODUCTS_MODULE), "Cart is not empty"
 
     def empty_cart_subtitle(self):
-        assert "Ваша корзина пуста" in self.browser.find_element(*CartPageLocators.EMPTY_CART_SUBTITLE).text, \
+        assert "Your basket is empty" in self.browser.find_element(*CartPageLocators.EMPTY_CART_SUBTITLE).text, \
             "Expected text for empty cart not present"
-
-
-

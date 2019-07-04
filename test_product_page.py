@@ -1,4 +1,8 @@
 import pytest
+
+"""please do not forget to import this module into venv of the project by using requirements.txt file
+or by install mimesis with command "pip install mimesis"
+"""
 from mimesis import Person
 
 from pages import CartPage

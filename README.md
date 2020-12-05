@@ -1,1 +1,1 @@
-Project completed during Selenium/Python/Pytest automation testing course on Stepik.com
+Project completed during Selenium/Python/Pytest automation testing course on Stepik.org
